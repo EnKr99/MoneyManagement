@@ -45,9 +45,9 @@ public class ViewListContents extends AppCompatActivity {
 
 
     private void loadDataInListView() {
-        arrayList_expense = myDB.getAllExpenseData(); // test
-        arrayList_income = myDB.getAllIncomeData();
-//        myDB.dropTable();
+        arrayList_expense = myDB.getTodayExpenseData(); // test
+//        arrayList_income = myDB.getAllIncomeData();
+//        myDB.dropTable(); // RECREATE
 
         listViewAdapter = new ListViewAdapter(this, arrayList_expense);
         listViewAdapter.notifyDataSetChanged();
@@ -56,29 +56,29 @@ public class ViewListContents extends AppCompatActivity {
 
 
         // Peekvalue area -----------------------------------------------------------------------------------------------------
-        TextView incomeText = (TextView) findViewById(R.id.incomeValue_txt);
-        TextView spentText = (TextView) findViewById(R.id.spentValue_txt);
-        TextView balanceText = (TextView) findViewById(R.id.balanceValue_txt);
-
-
-        double income = 0.0;
-        double expense = 0.0;
-        double balance = 0.0;
-        for (int i = 0; i < arrayList_income.size(); i++) {
-            income += Double.valueOf(arrayList_income.get(i).getMoney()); // Get all incomes
-        }
-        incomeText.setText("$ "+income);
-        incomeText.setTextColor(Color.parseColor("#00FF00"));
-
-
-        for (int i = 0; i < arrayList_expense.size(); i++) {
-            expense += Double.valueOf(arrayList_expense.get(i).getMoney()); // Get all expenses
-        }
-        spentText.setText("$ "+expense);
-        spentText.setTextColor(Color.parseColor("#FF0000"));
-
-        balance = (income - expense);
-        balanceText.setText("$ " + balance); // stop hereeee
+//        TextView incomeText = (TextView) findViewById(R.id.incomeValue_txt);
+//        TextView spentText = (TextView) findViewById(R.id.spentValue_txt);
+//        TextView balanceText = (TextView) findViewById(R.id.balanceValue_txt);
+//
+//
+//        double income = 0.0;
+//        double expense = 0.0;
+//        double balance = 0.0;
+//        for (int i = 0; i < arrayList_income.size(); i++) {
+//            income += Double.valueOf(arrayList_income.get(i).getMoney()); // Get all incomes
+//        }
+//        incomeText.setText("$ "+income);
+//        incomeText.setTextColor(Color.parseColor("#00FF00"));
+//
+//
+//        for (int i = 0; i < arrayList_expense.size(); i++) {
+//            expense += Double.valueOf(arrayList_expense.get(i).getMoney()); // Get all expenses
+//        }
+//        spentText.setText("$ "+expense);
+//        spentText.setTextColor(Color.parseColor("#FF0000"));
+//
+//        balance = (income - expense);
+//        balanceText.setText("$ " + balance); // stop hereeee
 
 
         // Swipe listView ------------------------------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ public class ViewListContents extends AppCompatActivity {
         listView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
-                arrayList_expense = myDB.getAllExpenseData();
+                arrayList_expense = myDB.getTodayExpenseData();
 
                 switch (index) {
                     case 0:
