@@ -47,21 +47,41 @@
 
 <!--    </LinearLayout>-->
 
+
+<!--    STOP HERE -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_below="@+id/peekValueArea"
-        android:layout_gravity="bottom"
-        android:orientation="vertical">
+        android:gravity="bottom|center"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:background="#FFA400"
+            android:onClick="didTapButton"
 
 
-        <com.baoyz.swipemenulistview.SwipeMenuListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></com.baoyz.swipemenulistview.SwipeMenuListView>
-
-
+            />
     </LinearLayout>
 
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@+id/peekValueArea"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
 
-</merge>
+
+            <com.baoyz.swipemenulistview.SwipeMenuListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></com.baoyz.swipemenulistview.SwipeMenuListView>
+
+
+        </LinearLayout>
+
+
+    </merge>
