@@ -7,10 +7,10 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/moneyManagementPage_Btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="262dp" />
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="264dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

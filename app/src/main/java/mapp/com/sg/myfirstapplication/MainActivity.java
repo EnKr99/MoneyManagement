@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ListPopupWindow;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -22,7 +23,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.input_interface);
+//        setContentView(R.layout.input_interface);
+        setContentView(R.layout.activity_main);
+
+
 
         // spinner
 //        Spinner mySpinner = (Spinner) findViewById(R.id.spinner1);
@@ -33,16 +37,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         // Keyboard part
-        EditText inputNumberText = (EditText) findViewById(R.id.inputNumber_txt);
-        MyKeyboard keyboard = (MyKeyboard) findViewById(R.id.keyboard);
-        inputNumberText.setRawInputType(InputType.TYPE_CLASS_TEXT);
-        inputNumberText.setTextIsSelectable(false);
-        inputNumberText.setShowSoftInputOnFocus(false); // disable keyboard
-        InputConnection ic = inputNumberText.onCreateInputConnection(new EditorInfo());
-        keyboard.setInputConnection(ic);
+//        EditText inputNumberText = (EditText) findViewById(R.id.inputNumber_txt);
+//        MyKeyboard keyboard = (MyKeyboard) findViewById(R.id.keyboard);
+//        inputNumberText.setRawInputType(InputType.TYPE_CLASS_TEXT);
+//        inputNumberText.setTextIsSelectable(false);
+//        inputNumberText.setShowSoftInputOnFocus(false); // disable keyboard
+//        InputConnection ic = inputNumberText.onCreateInputConnection(new EditorInfo());
+//        keyboard.setInputConnection(ic);
 
 
-        Button viewButton = (Button) findViewById(R.id.viewButton);
+//        Button viewButton = (Button) findViewById(R.id.viewButton);
+//        TextView textView = (TextView) findViewById(R.id.viewAllExpenses);
+        Button viewButton = (Button) findViewById(R.id.moneyManagementPage_Btn);
+
         viewButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -50,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
             }
         });
+
+
 
 
     }

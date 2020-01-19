@@ -1,87 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<LinearLayout-->
+    <!--    android:orientation="vertical"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    >-->
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/peekValueArea"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="250dp"-->
-<!--        android:gravity="top|center"-->
-<!--        android:orientation="vertical"-->
-<!--        android:padding="12dp"-->
-<!--        android:weightSum="3"-->
-
-<!--        >-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/incomeValue_txt"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:text="INCOME"-->
-<!--            android:textSize="20sp"-->
-<!--            android:gravity="center"-->
-<!--            />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/spentValue_txt"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:text="SPENT"-->
-<!--            android:textSize="20sp"-->
-<!--            android:gravity="center"-->
-
-<!--            />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/balanceValue_txt"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:text="BALANCE"-->
-<!--            android:textSize="22sp"-->
-<!--            android:gravity="center"-->
-
-<!--            />-->
-
-<!--    </LinearLayout>-->
-
-
-<!--    STOP HERE -->
     <LinearLayout
+        android:id="@+id/peekValueArea"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:gravity="bottom|center"
+        android:gravity="top|center"
         android:orientation="vertical"
-        android:padding="12dp">
+        android:padding="12dp"
+        android:weightSum="3"
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="92dp"
-            android:layout_height="92dp"
-            android:background="#FFA400"
-            android:onClick="didTapButton"
+        >
 
+        <TextView
+            android:id="@+id/incomeValue_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="INCOME"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/spentValue_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="SPENT"
+            android:textSize="20sp"
 
             />
+
+        <TextView
+            android:id="@+id/balanceValue_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="BALANCE"
+            android:textSize="22sp"
+
+            />
+
     </LinearLayout>
 
+
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/peekValueArea"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_below="@+id/peekValueArea"
-            android:layout_gravity="bottom"
-            android:orientation="vertical">
+            android:layout_height="30dp">
 
 
-            <com.baoyz.swipemenulistview.SwipeMenuListView
-                android:id="@+id/listView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"></com.baoyz.swipemenulistview.SwipeMenuListView>
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="left"
+                android:layout_margin="8dp"
+                android:paddingRight="180dp"
+                android:text="Today's expense(s): "
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/popupWindow"
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="#80FFFFFF"
+                android:backgroundTint="#00FFFFFF"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/plus"
+                android:layout_gravity="right"/>
 
 
         </LinearLayout>
 
 
-    </merge>
+        <com.baoyz.swipemenulistview.SwipeMenuListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:cacheColorHint="#FFFFFF">
+
+
+        </com.baoyz.swipemenulistview.SwipeMenuListView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|center">
+
+            <TextView
+                android:id="@+id/viewAllExpenses"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:gravity="center|bottom"
+                android:text="Click to view all expenses"
+                android:textSize="18sp"
+                android:onClick="onClick"
+                android:clickable="true"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="60dp"-->
+    <!--        android:gravity="bottom|center"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:padding="12dp">-->
+
+
+    <!--    </LinearLayout>-->
+
+
+    <!--</LinearLayout>-->
+</merge>

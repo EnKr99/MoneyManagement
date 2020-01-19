@@ -1,28 +1,30 @@
 package mapp.com.sg.myfirstapplication;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
+
 import java.util.ArrayList;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import mapp.com.sg.myfirstapplication.Adapters.ListViewAdapter;
 import mapp.com.sg.myfirstapplication.Model.Expense;
 import mapp.com.sg.myfirstapplication.Model.Income;
-import android.content.Intent;
 
 
-public class ViewListContents extends AppCompatActivity {
+public class ViewAllListContents extends AppCompatActivity {
     DatabaseHelper myDB;
     SwipeMenuListView listView;
     ArrayList<Expense> arrayList_expense;
@@ -34,25 +36,15 @@ public class ViewListContents extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.viewcontents_layout);
+        setContentView(R.layout.viewallcontents_layout);
 
-        Log.i("----------------------------------------------------------", "HERE!");
+        Log.i("----------------------------------------------------------", "viewallcontent");
         listView = (SwipeMenuListView) findViewById(R.id.listView);
         myDB = new DatabaseHelper(this);
         arrayList_expense = new ArrayList<>();
         arrayList_income = new ArrayList<>();
         loadDataInListView();
 
-        // STOP HERE
-        TextView textView = (TextView) findViewById(R.id.viewAllExpenses);
-
-        textView.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ViewListContents.this, ViewAllListContents.class);
-                startActivity(i);
-            }
-        });
 
 
     } // End onCreate
@@ -156,7 +148,7 @@ public class ViewListContents extends AppCompatActivity {
 
 
             private void PopEditWindow(int id, String memo, Double money) {
-                Intent intent = new Intent(ViewListContents.this, PopActivity.class);
+                Intent intent = new Intent(ViewAllListContents.this, PopActivity.class);
                 intent.putExtra("id", id);
                 intent.putExtra("memo", memo);
                 intent.putExtra("money", money);
