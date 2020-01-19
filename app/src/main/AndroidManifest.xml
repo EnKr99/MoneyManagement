@@ -40,7 +40,11 @@
             android:theme="@style/AppTheme.PopMe">
 
         </activity>
+        <activity
+            android:name=".ViewAllListContents"
+            android:theme="@style/AppTheme.PopMe">
 
+        </activity>
 
 
 
