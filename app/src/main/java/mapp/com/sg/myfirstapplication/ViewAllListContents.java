@@ -52,7 +52,8 @@ public class ViewAllListContents extends AppCompatActivity {
 
 
     private void loadDataInListView() {
-        arrayList_expense = myDB.getTodayExpenseData(); // test
+//        arrayList_expense = myDB.getTodayExpenseData(); // test
+        arrayList_expense = myDB.getAllExpenseData(); // test
 //        arrayList_income = myDB.getAllIncomeData();
 //        myDB.dropTable(); // RECREATE
 

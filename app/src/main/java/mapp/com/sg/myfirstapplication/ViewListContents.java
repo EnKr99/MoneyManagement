@@ -13,6 +13,8 @@ import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,6 +47,7 @@ public class ViewListContents extends AppCompatActivity {
 
         // STOP HERE
         TextView textView = (TextView) findViewById(R.id.viewAllExpenses);
+        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.addButton);
 
         textView.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -54,6 +57,13 @@ public class ViewListContents extends AppCompatActivity {
             }
         });
 
+        floatingActionButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ViewListContents.this, InputValueScreen.class);
+                startActivity(i);
+            }
+        });
 
     } // End onCreate
 
