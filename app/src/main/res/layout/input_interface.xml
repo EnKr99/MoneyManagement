@@ -30,12 +30,14 @@
         android:orientation="vertical" />
 
     <Button
-        android:id="@+id/viewButton"
+        android:id="@+id/backButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentRight="true"
         android:layout_margin="8dp"
-        android:text="View"
+        android:text="back"
+        android:onClick="onClick"
+        android:clickable="true"
         />
 
 </RelativeLayout>

@@ -101,8 +101,8 @@
                 android:gravity="center|bottom"
                 android:text="Click to view all expenses"
                 android:textSize="18sp"
-                android:onClick="onClick"
                 android:clickable="true"
+                android:onClick="onClick"
                 />
         </LinearLayout>
 
