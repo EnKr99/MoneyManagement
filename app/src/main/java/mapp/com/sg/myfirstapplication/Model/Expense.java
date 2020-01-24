@@ -1,5 +1,6 @@
 package mapp.com.sg.myfirstapplication.Model;
 
+
 public class Expense {
     int id;
     String memo;

@@ -138,7 +138,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Expense expense = new Expense(id, memo, money);
             arrayList.add(expense);
 
-            Log.i("All the date ", id + " = " + cursor.getString(3));
+//            Log.i("All the date ", id + " = " + cursor.getString(3));
         }
 
         return arrayList;

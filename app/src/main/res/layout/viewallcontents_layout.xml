@@ -1,25 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
-    <LinearLayout
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@+id/peekValueArea"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        android:orientation="vertical">-->
+
+
+<!--        <ListView-->
+<!--            android:id="@+id/listView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:cacheColorHint="#FFFFFF"-->
+<!--            >-->
+
+<!--        </ListView>-->
+
+
+<!--&lt;!&ndash;        <com.baoyz.swipemenulistview.SwipeMenuListView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/listView"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="100dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:cacheColorHint="#FFFFFF">&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;        </com.baoyz.swipemenulistview.SwipeMenuListView>&ndash;&gt;-->
+
+<!--    </LinearLayout>-->
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/peekValueArea"
-        android:layout_gravity="bottom"
-        android:orientation="vertical">
+        >
 
-
-
-        <com.baoyz.swipemenulistview.SwipeMenuListView
-            android:id="@+id/listView"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:cacheColorHint="#FFFFFF">
+            tools:listitem="@layout/cardviewcontents"
+            />
 
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-        </com.baoyz.swipemenulistview.SwipeMenuListView>
-
-    </LinearLayout>
-
-</merge>
+    </merge>
